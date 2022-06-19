@@ -13,7 +13,7 @@ module.exports = config => {
 
   const markdownLib = markdownIt(mdOptions).disable('code').use(markdownItLinkAttributes, {
     matcher: (href) => {
-      return !href.match(/^(\/|(http(s)?:\/\/)?(localhost|.*blog\.spedion\.(de|biz)))/gi);
+      return !href.match(/^(\/|(http(s)?:\/\/)?(localhost))/gi);
     },
     attrs: {
       target: "_blank",
