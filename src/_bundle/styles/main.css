@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+    width: 8px;  
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    @apply bg-gray-400;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border: unset;
+    width: 0;
+}
+
+body {
+    @apply bg-background;
+}
+
+input:checked ~ .check-checkbox{
+    @apply text-opacity-100;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+
+.links a {
+    @apply hover:text-primary;
+}
+
+@media (min-width: 1024px) {
+    .lg46padding {padding-top: 46%;}
+}

@@ -1,0 +1,46 @@
+{% for post in collections.posts %}
+        <div>
+            <div>
+                
+                    {% set coverImageData = {src: post.data.coverImage, blur: post.data.blurCoverImage, alt: post.data.title ,height: "800", width: "475", plaiceholderPadding: "63%"} %}
+                    {% if coverImageData.blur != true %}
+                        {% set imgClassString = "object-cover w-full h-full mb-2" %}
+                    {% else %}
+                        {% set imgClassString = "object-contain w-full h-full mb-2" %}
+                    {% endif %}
+                    {% set src = "public" + coverImageData.src %}
+
+                    {% image {src: src, reserveImage: "public/assets/Testbild.svg", blurCoverImage: coverImageData.blur, alt: coverImageData.alt, classString: imgClassString, height: coverImageData.height, width: coverImageData.width, plaiceholderPadding: coverImageData.plaiceholderPadding} %}
+                
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                
+                                    {{post.date}}
+                                
+                            </div>
+                            <div>
+                                <p>{{ post.data.title }}</p>
+                                <p>{{ post.data.excerpt }}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="hidden lg:ml-2 lg:block col-start-1 lg:col-start-2 text-gray-700 text-xs lg:w-2/3">
+                                
+                                    {{post.date}}
+                                
+                            </div>
+                            <div>
+                                
+                                    <p>Weiterlesen</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endfor %}
